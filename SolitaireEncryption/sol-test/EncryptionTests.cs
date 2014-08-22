@@ -18,6 +18,14 @@ namespace soltest
 			var output = ps.Encrypt (text).Pad5 ();
 			return output;
 		}
+		[Test ()]
+		public void TestKey_Petzold ()
+		{
+			// Petzold signed copy contest
+			var output = TestKeyText ("lab_nb", "PETZOLD");
+			Console.Write (output);
+			Assert.AreEqual("SJGUS IEVVF", output);
+		}
 
 		[Test ()]
 		public void TestKey_nullkey ()
